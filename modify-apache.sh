@@ -4,7 +4,7 @@
 a2enmod rewrite expires headers
 
 #ALLOW SYMBOLIC LINK APACHE
-sed -i '0,/AllowOverride None/s//AllowOverride All/; 0,/Require all denied/s//Require all granted/' /etc/apache2/apache2.conf
+sed -i '0,/AllowOverride None/s//AllowOverride All/; 2,/AllowOverride None/s//AllowOverride All/; 0,/Require all denied/s//Require all granted/' /etc/apache2/apache2.conf
 
 #REMOVE APACHE SECURITY HEADERS FROM SERVER
 printf "\n#Remove Server Tokens\nServerTokens Prod\n#Remove server signature\nServerSignature Off" >> /etc/apache2/apache2.conf
