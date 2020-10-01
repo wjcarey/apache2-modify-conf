@@ -1,6 +1,4 @@
-# modify-apache2-webserver-config
-
-# swapfile-create-script
+# apache2-modify-conf
 
 ### Run this code below to execute the script and create a swapfile.
-`sudo curl -o modify-apache.sh https://raw.githubusercontent.com/wjcarey/modify-apache2-webserver-config/master/modify-apache.sh && sudo chmod 777 modify-apache.sh && sudo ./modify-apache.sh`
+`sudo curl -o apache2-modify-conf.sh https://raw.githubusercontent.com/wjcarey/apache2-modify-conf/master/apache2-modify-conf.sh && sudo chmod 777 apache2-modify-conf.sh && sudo ./apache2-modify-conf.sh`
