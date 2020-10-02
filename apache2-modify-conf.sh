@@ -4,7 +4,7 @@
 echo "enabling rewrite, expires, and headers modules to apache ..."
 a2enmod rewrite expires headers
 echo "updating rewrite rules to apache config ..."
-sed -i '0,/AllowOverride None/s//AllowOverride All/; 3,/AllowOverride None/s//AllowOverride All/; 0,/Require all denied/s//Require all granted/' /etc/apache2/apache2.conf
+awk '/AllowOverride None/{c++}{if(c==3){sub("AllowOverride None","AllowOveride All")}}' /etc/apache2/apache2.conf > /etc/apache2/apache2.conf
 echo "silencing apache server tokens from server ..."
 printf "\n#Remove Server Tokens\nServerTokens Prod\n#Remove server signature\nServerSignature Off" >> /etc/apache2/apache2.conf
 echo "updating php config with higher memory and upload size ..."
